@@ -2,3 +2,21 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  /* Переменные тёмной темы */
+  --background-color:#000028;
+  --background-image: url(../images/cover-image-dark.png);
+  --basic-text-color:#F1B2CE;
+  --rec-visibility: visible;
+  --header-menu-text-color:#FF0070;
+  --button-border-color:#FF0070;
+  --button-border-hover-color: rgba(255,0,112,0.4);
+  --title-header-color:#DB00FF;
+  --title-section-color:#FF0070;
+  --title-block-color:#000028;
+  --title-block-background-color:#FF0070;
+  --title-rule-color:#000028;
+  --title-rule-background-color:#FF0070;
+  --title-footer-color:#DB00FF;
+  --all-text-shadow:#FF0070;
+}
