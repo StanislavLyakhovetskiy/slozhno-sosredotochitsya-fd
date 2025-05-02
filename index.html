@@ -41,9 +41,11 @@
         </nav>
         <h1 class="title__header">no focus</h1>
         <div class="header__text-area">
-          <!-- везде в дизайне всегда текст идет с переносом, поэтому <br/> и не стал менять 
-          тут ничего, если бы по дизайну где-то было без переноса, тогда ок, согласен поломать голову -->
-          <p class="header__text header__text-align"> Что делать, когда не можешь делать ничего<br/>
+          <!-- никак не сделать без принудительного переноса, 
+            чтобы на размере не менее 1024 было 3 строки, если слово "Или" переносится, 
+            то автоматически переносится и следующая строка и слово "сконцентрироваться" 
+            не попадается на 3-ую строку -->
+          <p class="header__text header__text-align"> Что делать, когда не можешь делать ничего
             Или почему нам так сложно сконцентрироваться, особенно когда очень надо
           </p>
         </div>
@@ -77,7 +79,7 @@
 
       <section class="what section">
         <div class="what__block-title">
-          <h2 class="title__section">Что снижает концентрацию<br/>внимания?</h2>
+          <h2 class="title__section">Что снижает концентрацию внимания?</h2>
         </div>
         <article>
           <h3 class="title__block">Многозадачность</h3>
@@ -187,8 +189,7 @@
       </section>
     </main>
     <footer class="footer decorated-zone">
-      <h2 class="title__footer">focus</h2> 
-      <!-- сместил заголовки на 1 уровень, чтобы тут указать h2 -->
+      <h2 class="title__footer">focus</h2>
     </footer>
     <script src="./scripts/script.js"></script>
   </body>

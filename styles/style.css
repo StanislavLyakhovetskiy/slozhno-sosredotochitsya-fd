@@ -10,22 +10,21 @@
   background-image: var(--background-image);
   background-position: center;
   background-attachment: fixed;
+  border:1px solid #abd34a;
 }
 
 /* Экраны больше ширины 1024px */
 
 /* @media (width >= 1024px) { */
-  
-  .header__text-align {
-    grid-column-start: 2;
-    grid-column-end: 3;
-  }
 
   .header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
     margin-inline-start: 20px;
     margin-inline-end: 20px;
     margin-block-start: 20px;
-    height: 100vh;
+    min-height: 668px;
     /*border:1px solid #abd34a;*/
     /* минимальная высота указана для всех медиазапросов внизу min-height: 668px */
   }
@@ -42,15 +41,45 @@
   }
 
   .title__header {
+    justify-content: flex-start;
+    align-items: flex-start;
     margin-inline-start: -21px;
     margin-block-start: 273px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     /*border:1px solid #4a5fd3;*/
+    color: var(--title-header-color);
+    text-shadow: 4px 4px 0px var(--all-text-shadow);
+    font-family: IBM Plex Mono, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 82.5%; /* 129.525px */
   }
+
   .header__text-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: flex-start;
+    align-items: center;
     margin-block-start: 115px;
+    margin-block-end: 135px;
     margin-inline-start: 2px;
-    /*border:1px solid #d34ab5;*/
+    /*border: 1px solid #d34ab5;*/
+  }
+
+  .header__text {
+    color: var(--title-block-color);
+    background-color: var(--title-block-background-color);
+    font-family: IBM Plex Mono, Arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 23.4px; /* 130% */
+  }
+
+  .header__text-align {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    /*border:1px solid #4a5fd3;*/
   }
 
 /* общий класс для всех секций */
@@ -107,8 +136,14 @@
   }
 
   .what__block-title {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     grid-column-start: 1;  
     grid-column-end: 4;
+    /*grid-column-start: 1;  
+    grid-column-end: 4;*/
+    /*border:1px solid #4a53d3;*/
   }
 
   .how {
@@ -202,21 +237,26 @@
 
   .footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 668px;
     position: relative;
     margin-inline-start: 20px;
     margin-inline-end: 20px;
-    margin-block-start: 78px;
-    height: 100vh;
-    /*border:1px solid #d34aac;*/
-    /* минимальная высота указана для всех медиазапросов внизу min-height: 668px */
+    margin-block-start: 80px;
+    /*border: 1px solid #d34aac;*/
   }
 
   .title__footer {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin-block-start: -10px;
+    color: var(--title-footer-color);
+    text-shadow: 2px 2px 0px var(--all-text-shadow);
+    font-family: IBM Plex Mono, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 82.5%; /* 129.525px */
+    margin-block-start: 300px;
+    margin-block-end: 320px;
   }
 
 /* } */
@@ -225,20 +265,12 @@
 
 /* @media (768px <= width < 1024px) { */
   @media (width <= 1023px) {
-  
-  .header__text-align {
-    grid-column-start: 2;  
-    grid-column-end: 3;
-  }
 
   .header {
-    /* а можно обратить внимание на мои комментарии вот тут ? вы их читаете ? */
-    /* если не указать, то я не попаду в макет на указанный размер, он будет не совпадать */
-    /* минимальная высота указана для всех медиазапросов внизу min-height: 668px */
     margin-inline-start: 20px;
     margin-inline-end: 20px;
     margin-block-start: 20px;
-    height: 1004px;
+    /*height: 1004px;*/
     /*border:1px solid #abd34a;*/
   }
   
@@ -266,7 +298,15 @@
 
   .header__text-area {
     margin-block-start: 162px;
-    /*border:1px solid #d36f4a;*/
+    margin-block-end: 183px;
+    margin-inline-end: 0px;
+    /*border: 1px solid #d36f4a;*/
+  }
+
+  .header__text-align {
+    grid-column-start: 2;  
+    grid-column-end: 3;
+    /*border:1px solid #4a5fd3;*/
   }
 
   .decorated-zone::after {
@@ -414,19 +454,18 @@
     grid-column-end: span 2;
   }*/
 
-  .footer {
-    /* если не указать, то я не попаду в макет на указанный размер, он будет не совпадать */
+  /*.footer {
     margin-inline-start: 20px;
     margin-inline-end: 20px;
     margin-block-start: 80px;
-    height: 1004px;
-    /*border:1px solid #abd34a;*/
-    /* минимальная высота указана для всех медиазапросов внизу min-height: 668px */
-  }
+    border: 1px solid #abd34a;
+  }*/
 
   .title__footer {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    margin-block-start: -15px;
+    margin-block-start: 445px;
+    margin-block-end: 460px;
+    /*border: 1px solid #abd34a;*/
   }
 
 }
@@ -434,20 +473,12 @@
 /* Экраны меньше ширины 768px */
 
 @media (width <= 767px) {
-  
-/* я так и сделал, чтобы в 3-х медиазапросах значения были только 
-уникальные, остальное в общие свойства, что именно я пропустил ?*/
-
-  .header__text-align {
-    grid-column-start: 1;  
-    grid-column-end: span 2;
-  }
 
   .header {
     margin-block-start: 10px;
     margin-inline-start: 10px;
     margin-inline-end: 10px;
-    height: 658px;
+    /*height: 658px;*/
     /*border:1px solid #abd34a;*/
   }
   
@@ -474,8 +505,15 @@
 
   .header__text-area {
     margin-block-start: 56px;
+    margin-block-end: 0px;
     margin-inline-start: 0px;
     /*border: 1px solid #d3714a;*/
+  }
+
+  .header__text-align {
+    grid-column-start: 1;  
+    grid-column-end: span 2;
+    padding-inline-end: 60px;
   }
 
   .decorated-zone::after {
@@ -539,20 +577,20 @@
   }
 
   .pictures__block-title {
-    justify-content: flex-start;
-    align-items: flex-start;
+    width: 100%;
+    /*border: 1px solid #d34ab5;*/
   }
 
   .footer {
     margin-inline-start: 10px;
     margin-inline-end: 10px;
     margin-block-start: 50px;
-    height: 658px;
   }
 
   .title__footer {
-    margin-block-start: -15px;
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    margin-block-start: 280px;
+    margin-block-end: 294px;
   }
 
 }
@@ -577,15 +615,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: 23.4px; /* 130% */
-}
-
-.title__footer {
-  color: var(--title-footer-color);
-  text-shadow: 2px 2px 0px var(--all-text-shadow);
-  font-family: IBM Plex Mono, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 82.5%; /* 129.525px */
 }
 
 .text {
@@ -619,46 +648,8 @@
 
 /* заголовок сайта */
 
-.header {
-  /*display: grid;
-  grid-template-rows: 1fr min-content 1fr;*/
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  /*height: 100vh;*/
-  min-height: 668px;
-}
-
 .header__theme-menu-list {
   display: flex;
-}
-
-.title__header {
-  color: var(--title-header-color);
-  text-shadow: 4px 4px 0px var(--all-text-shadow);
-  font-family: IBM Plex Mono, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 82.5%; /* 129.525px */
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.header__text {
-  color: var(--title-block-color);
-  background-color: var(--title-block-background-color);
-  font-family: IBM Plex Mono, Arial, sans-serif;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 23.4px; /* 130% */
-}
-
-.header__text-area {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: flex-start;
-  align-items: center;
 }
 
 .decorated-zone::after {
@@ -681,7 +672,6 @@
   border-left: 1px solid var(--button-border-color);
   left: 0px;
   bottom: 20px;
-  /* тег bottom указан в media-запросах каждый своим значением */
 }
 
 .rec {
